@@ -1,3 +1,5 @@
-<p>
-  login works!
-</p>
+<h4>Login</h4>
+<label for="email">Email:</label>
+<input type="text" #email name="email">
+<input type="password" #password name="password">
+<button (click)="login(email.value, password.value)">Login</button>
