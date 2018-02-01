@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { catchError, map } from 'rxjs/operators';
 import 'rxjs/add/observable/throw';
 
-import { AuthObject } from '../models/auth-object.model';
+import { AuthEntity } from '../models/auth-entity.model';
 
 const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 
@@ -19,10 +19,10 @@ export class AuthService {
     this.authSvcUrl = environment.authSvc;
   }
 
-  login(username: string, password: string): Observable<AuthObject> {
+  login(username: string, password: string): Observable<AuthEntity> {
     const url = this.authSvcUrl + 'auth/login';
     const body = { username: 'testuser', password: 'testpass' };
-    return this.http.post<AuthObject>(url, body, httpOptions).pipe(
+    return this.http.post<AuthEntity>(url, body, httpOptions).pipe(
       catchError(this.handleError)
     );
   }

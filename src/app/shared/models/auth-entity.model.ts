@@ -1,5 +1,5 @@
 import { User } from './user.model';
-export class AuthObject {
+export class AuthEntity {
   user: User;
   token: string;
 }

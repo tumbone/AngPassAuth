@@ -2,4 +2,6 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
+  <h3>User:</h3>
+  <p *ngIf="user">{{user | json}}</p>
 </div>
