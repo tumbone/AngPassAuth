@@ -27,6 +27,13 @@ export class AuthService {
     );
   }
 
+  getAllUsers(): Observable<any> {
+    const url = this.authSvcUrl + 'users';
+    return this.http.get(url).pipe(
+      catchError(this.handleError)
+    );
+  }
+
   logout(): void {
     this.isLoggedIn = false;
   }

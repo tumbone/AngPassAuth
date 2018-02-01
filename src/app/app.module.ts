@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NoopInteceptor } from './noop.interceptor';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -22,7 +24,12 @@ import { StorageService } from './shared/services/storage.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [AuthGuardService, AuthService, StorageService],
+  providers: [
+    AuthGuardService,
+    AuthService,
+    StorageService,
+    { provide: HTTP_INTERCEPTORS, useClass: NoopInteceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
