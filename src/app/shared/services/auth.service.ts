@@ -6,16 +6,17 @@ import { catchError, map } from 'rxjs/operators';
 import 'rxjs/add/observable/throw';
 
 import { AuthEntity } from '../models/auth-entity.model';
+import { StorageService } from '../services/storage.service';
 
 const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 
 @Injectable()
 export class AuthService {
-  isLoggedIn = false;
+  // isLoggedIn = false;
   redirectUrl: string;
   authSvcUrl: string;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private storageService: StorageService) {
     this.authSvcUrl = environment.authSvc;
   }
 
@@ -34,8 +35,14 @@ export class AuthService {
     );
   }
 
-  logout(): void {
-    this.isLoggedIn = false;
+  isLoggedIn(): boolean {
+    const authObject = this.storageService.getObjectFromStorage('AuthObject');
+    return authObject ? true : false;
+  }
+
+  logout(): boolean {
+    this.storageService.removeFromStorage('AuthObject');
+    return !this.isLoggedIn();
   }
 
   private handleError(error: Response | any) {

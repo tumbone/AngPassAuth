@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { StorageService } from '../shared/services/storage.service';
 import { AuthEntity } from '../shared/models/auth-entity.model';
 import { User } from '../shared/models/user.model';
@@ -13,10 +14,10 @@ export class DashboardComponent implements OnInit {
   title = 'Ang-Pass-Auth';
   user: User;
   users$: [User];
-  constructor(private storageService: StorageService, private authService: AuthService) { }
+  constructor(private storageService: StorageService, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-    const authFromStorage = this.storageService.getObjectFromStore('AuthObject') as AuthEntity;
+    const authFromStorage = this.storageService.getObjectFromStorage('AuthObject') as AuthEntity;
     this.user = authFromStorage ? authFromStorage.user : undefined;
   }
 
@@ -27,6 +28,12 @@ export class DashboardComponent implements OnInit {
     }, (error) => {
       console.log(error);
     });
+  }
+
+  logout(): void {
+    if (this.authService.logout()) {
+      this.router.navigate(['/login']);
+    }
   }
 
 }

@@ -9,4 +9,5 @@
   <ul *ngFor="let user of users$">
     <li>{{user | json}}</li>
   </ul>
+  <button (click)="logout()">Log out</button>
 </div>

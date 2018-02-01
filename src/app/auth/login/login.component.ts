@@ -18,8 +18,7 @@ export class LoginComponent implements OnInit {
   login(username, password): void {
     this.authService.login(username, password).subscribe((response) => {
       if (response) {
-        this.storageService.setObjectToStore('AuthObject', response);
-        this.authService.isLoggedIn = true;
+        this.storageService.setObjectToStorage('AuthObject', response);
         const redirectUrl = this.authService.redirectUrl ? this.authService.redirectUrl : '';
         this.router.navigate([redirectUrl]);
       }
