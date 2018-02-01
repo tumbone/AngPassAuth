@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
-import { AuthGuardService } from '../shared/services/auth-guard.service';
+import { AuthGuardService } from './shared/services/auth-guard.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },

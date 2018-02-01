@@ -3,6 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs/Observable';
 import { catchError, map } from 'rxjs/operators';
+import 'rxjs/add/observable/throw';
+
 import { AuthObject } from '../models/auth-object.model';
 
 const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
@@ -18,9 +20,9 @@ export class AuthService {
   }
 
   login(username: string, password: string): Observable<AuthObject> {
-    const url = this.authSvcUrl + 'login';
-    const body = { username: username, password: password };
-    return this.http.post<AuthObject>(url, body).pipe(
+    const url = this.authSvcUrl + 'auth/login';
+    const body = { username: 'testuser', password: 'testpass' };
+    return this.http.post<AuthObject>(url, body, httpOptions).pipe(
       catchError(this.handleError)
     );
   }
