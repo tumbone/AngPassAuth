@@ -12,7 +12,7 @@ export class SignupComponent {
   constructor(private authService: AuthService) { }
 
   signUp(email, password, confirmPassword) {
-    if (password === confirmPassword) {
+    if ((email && password) && (password === confirmPassword)) {
       const newUser = new User();
       newUser.username = email;
       newUser.password = password;
@@ -24,7 +24,7 @@ export class SignupComponent {
         alert('Error: Could not create the user!');
       });
     } else {
-      alert('Error: Passwords do not match!');
+      alert('Error: Invalid/missing input!');
     }
   }
 
