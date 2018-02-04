@@ -22,7 +22,7 @@ export class AuthService {
 
   login(username: string, password: string): Observable<AuthEntity> {
     const url = this.authSvcUrl + 'auth/login';
-    const body = { username: 'testuser', password: 'testpass' };
+    const body = { username: username, password: password };
     return this.http.post<AuthEntity>(url, body, httpOptions).pipe(
       catchError(this.handleError)
     );
@@ -43,6 +43,13 @@ export class AuthService {
   logout(): boolean {
     this.storageService.removeFromStorage('AuthObject');
     return !this.isLoggedIn();
+  }
+
+  signUp(user): Observable<any> {
+    const url = this.authSvcUrl + 'auth/signup';
+    return this.http.post(url, user).pipe(
+      catchError(this.handleError)
+    );
   }
 
   private handleError(error: Response | any) {

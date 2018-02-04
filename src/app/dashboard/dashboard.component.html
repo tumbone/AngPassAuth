@@ -2,12 +2,16 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <h3>User:</h3>
-  <p *ngIf="user">{{user | json}}</p>
+</div>
+<h3>User:</h3>
+<p *ngIf="user">{{user | json}}</p>
+<button (click)="getAllUsers()">Get All Users</button>
+<div *ngIf="users$">
   <h3>All Users</h3>
-  <button (click)="getAllUsers()">Get All Users</button>
   <ul *ngFor="let user of users$">
     <li>{{user | json}}</li>
   </ul>
-  <button (click)="logout()">Log out</button>
 </div>
+<p>
+  <button (click)="logout()">Log out</button>
+</p>

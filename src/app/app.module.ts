@@ -11,13 +11,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuardService } from './shared/services/auth-guard.service';
 import { AuthService } from './shared/services/auth.service';
 import { StorageService } from './shared/services/storage.service';
+import { SignupComponent } from './auth/signup/signup.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

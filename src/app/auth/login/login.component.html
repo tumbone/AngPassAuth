@@ -1,5 +1,14 @@
 <h4>Login</h4>
-<label for="email">Email:</label>
-<input type="text" #email name="email">
-<input type="password" #password name="password">
+<p>
+  <label for="email">Email:</label>
+  <input type="text" #email name="email">
+</p>
+<p>
+  <label for="password">Password:</label>
+  <input type="password" #password name="password">
+</p>
 <button (click)="login(email.value, password.value)">Login</button>
+<p>
+  Don't have an account?
+  <a routerLink="/signup">Sign Up</a>
+</p>

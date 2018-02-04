@@ -24,7 +24,6 @@ export class DashboardComponent implements OnInit {
   getAllUsers(): void {
     this.authService.getAllUsers().subscribe((response) => {
       if (response) { this.users$ = response; }
-      console.log(response);
     }, (error) => {
       console.log(error);
     });
