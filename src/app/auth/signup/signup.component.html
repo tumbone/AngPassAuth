@@ -1,18 +1,36 @@
-<h4>Sign Up</h4>
-<p>
+<div class="container-fluid">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-sm-5">
+      <div class="card">
+        <h5 class="card-header text-center">Sign Up</h5>
+        <div class="card-body p-5">
+          <div class="form-group row">
+            <label for="username" class="col-form-label-sm col-sm-3">Username:</label>
+            <div class="col-sm-9">
+              <input class="form-control form-control-sm" type="text" #usename name="username">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="password" class="col-form-label-sm col-sm-3">Password:</label>
+            <div class="col-sm-9">
+              <input class="form-control form-control-sm" type="password" #password name="password">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="passwordConfirm" class="col-form-label-sm col-sm-3">Confirm Password:</label>
+            <div class="col-sm-9">
+              <input class="form-control form-control-sm" type="password" #passwordConfirm name="passwordConfirm">
+            </div>
+          </div>
 
-  <label for="email">Email:</label>
-  <input type="text" #email name="email">
-</p>
-<p>
-  <label for="password">Password:</label>
-  <input type="password" #password name="password">
-</p>
-<p>
-  <label for="confirmPassword">Confirm Password:</label>
-  <input type="password" #passwordConfirm name="passwordConfirm">
-</p>
-<button (click)="signUp(email.value, password.value, passwordConfirm.value)">Sign Up</button>
-<p>Already have an account?
-  <a routerLink="/login">Login</a>
-</p>
+          <div class="card-text text-center">
+            <button type="submit" class="btn btn-primary btn-sm" (click)="signUp(usename.value, password.value, passwordConfirm.value)">Sign Up</button>
+            <h6 class="pt-2"> Already have an account?
+              <a class="card-link" routerLink="/login">Login</a>
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
