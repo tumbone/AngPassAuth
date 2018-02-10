@@ -1,17 +1,29 @@
-<div class="container">
-
-  <h4>Login</h4>
-  <p>
-    <label for="username">Username:</label>
-    <input type="text" #usename name="username">
-  </p>
-  <p>
-    <label for="password">Password:</label>
-    <input type="password" #password name="password">
-  </p>
-  <button class="btn btn-primary" (click)="login(usename.value, password.value)">Login</button>
-  <p>
-    Don't have an account?
-    <a routerLink="/signup">Sign Up</a>
-  </p>
+<div class="container-fluid">
+  <div class="row h-100 justify-content-center align-items-center">
+    <div class="col-sm-5">
+      <div class="card">
+        <h5 class="card-header text-center">Login</h5>
+        <div class="card-body p-5">
+          <div class="form-group row">
+            <label for="username" class="col-form-label-sm col-sm-3">Username:</label>
+            <div class="col-sm-9">
+              <input class="form-control form-control-sm" type="text" #usename name="username">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="password" class="col-form-label-sm col-sm-3">Password:</label>
+            <div class="col-sm-9">
+              <input class="form-control form-control-sm" type="password" #password name="password">
+            </div>
+          </div>
+          <div class="card-text text-center">
+            <button type="submit" class="btn btn-primary btn-sm" (click)="login(usename.value, password.value)">Login</button>
+            <h6 class="pt-2">Don't have an account?
+              <a class="card-link" routerLink="/signup">Sign Up</a>
+            </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
