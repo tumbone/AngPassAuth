@@ -46,11 +46,13 @@
         <table class="table table-sm table-bordered my-3">
           <thead>
             <tr>
+              <th>#</th>
               <th *ngFor="let theader of usersTableHeaders">{{theader.text}}</th>
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let user of users$">
+            <tr *ngFor="let user of users$, index as i">
+              <td>{{i}}</td>
               <td>{{user._id}}</td>
               <td>{{user.username}}</td>
             </tr>
