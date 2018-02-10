@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit {
   title = 'Ang-Pass-Auth';
   user: User;
   users$: [User];
+  usersTableHeaders = [{ name: 'ID', text: 'User ID' }, { name: 'Username', text: 'Username' }];
   constructor(private storageService: StorageService, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -27,12 +28,6 @@ export class DashboardComponent implements OnInit {
     }, (error) => {
       console.log(error);
     });
-  }
-
-  logout(): void {
-    if (this.authService.logout()) {
-      this.router.navigate(['/login']);
-    }
   }
 
 }
