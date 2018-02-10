@@ -12,6 +12,7 @@ import { AuthGuardService } from './shared/services/auth-guard.service';
 import { AuthService } from './shared/services/auth.service';
 import { StorageService } from './shared/services/storage.service';
 import { SignupComponent } from './auth/signup/signup.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SignupComponent } from './auth/signup/signup.component';
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    SignupComponent
+    SignupComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
