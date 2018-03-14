@@ -5,11 +5,23 @@
   },
   "apps": [
     {
-      "root": "src",
-      "outDir": "dist",
+      "root": "src/client",
+      "outDir": "dist/publicweb",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        {
+          "glob": "**/*.*",
+          "input": "../server/",
+          "output": "../",
+          "allowOutsideOutDir": true
+        },
+        {
+          "glob": "package.json",
+          "input": "../../",
+          "output": "../",
+          "allowOutsideOutDir": true
+        }
       ],
       "index": "index.html",
       "main": "main.ts",
