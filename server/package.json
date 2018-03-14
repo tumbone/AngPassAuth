@@ -5,7 +5,7 @@
   "main": "server.js",
   "private": true,
   "scripts": {
-    "start": "node server",
+    "start": "node server"
   },
   "dependencies": {
     "classlist.js": "^1.1.20150312",
