@@ -1,11 +1,13 @@
-const dotenv = require('dotenv');
-if (!process.env.NODE_ENV) {
-  console.error(
-    'ENV variables are missing.',
-    'Verify that you have set them directly or in a .env file.'
-  );
-  process.exit(1);
-}
+require('dotenv').config();
+
+console.log('Node Env:', process.env.NODE_ENV);
+// if (!process.env.NODE_ENV) {
+//   console.error(
+//     'ENV variables are missing.',
+//     'Verify that you have set them directly or in a .env file.'
+//   );
+//   process.exit(1);
+// }
 
 const express = require('express');
 const app = express();
