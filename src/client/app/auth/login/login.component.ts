@@ -20,6 +20,7 @@ export class LoginComponent {
         this.router.navigate([redirectUrl]);
       }
     }, (error) => {
+      console.log('Error:', error)
       alert('Error: ' + error.error);
     });
   }

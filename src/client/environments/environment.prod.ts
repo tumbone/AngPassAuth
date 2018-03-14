@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  authSvc: ''
+  authSvc: 'expassauth:3000/'
 };
