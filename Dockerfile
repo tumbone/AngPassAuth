@@ -1,5 +1,5 @@
 # Client App
-FROM johnpapa/angular-cli as client-app
+FROM tumbone/angular-cli as client-app
 WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 RUN npm install --silent
