@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  authSvc: 'expassauth:3000/'
+  authSvc: 'http://192.168.1.26:3000/'
 };

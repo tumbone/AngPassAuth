@@ -22,6 +22,7 @@ export class AuthService {
 
   login(username: string, password: string): Observable<AuthEntity> {
     const url = this.authSvcUrl + 'auth/login';
+    console.log('Login attempt:', url);
     const body = { username: username, password: password };
     return this.http.post<AuthEntity>(url, body, httpOptions).pipe(
       catchError(this.handleError)
