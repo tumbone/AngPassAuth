@@ -21,7 +21,7 @@ services:
       restart_policy:
         condition: on-failure
     ports:
-      - "3001:3001"
+      - "4300:80"
     networks:
       - webnet
   expassauth:

@@ -18,5 +18,5 @@ FROM node:8.9-alpine
 WORKDIR /usr/src/app
 COPY --from=node-server /usr/src /usr/src
 COPY --from=client-app /usr/src/app/dist ./
-EXPOSE 3001
+EXPOSE 80
 CMD ["node", "server.js"]
