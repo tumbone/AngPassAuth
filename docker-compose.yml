@@ -9,8 +9,6 @@
 # docker swarm init
 # docker stack deploy -c docker-compose.yml node-express-auth-app 
 
-
-
 version: "3"
 services:
   angpassauth:
