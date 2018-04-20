@@ -2,9 +2,8 @@
   "app": {
     "name": "ang-pass-auth"
   },
-  "container_repo": {},
   "pipeline": {
-    "enabled": false,
+    "enabled": true,
     "debug": false
   }
 }
