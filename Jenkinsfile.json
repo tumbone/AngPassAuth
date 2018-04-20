@@ -4,7 +4,7 @@
   },
   "container_repo": {},
   "pipeline": {
-    "enabled": true,
+    "enabled": false,
     "debug": false
   }
 }
