@@ -1,0 +1,10 @@
+{
+  "app": {
+    "name": "ang-pass-auth"
+  },
+  "container_repo": {},
+  "pipeline": {
+    "enabled": true,
+    "debug": false
+  }
+}
