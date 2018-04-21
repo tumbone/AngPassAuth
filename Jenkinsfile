@@ -28,10 +28,11 @@ node {
     // Set Git env vars required for image tagging
     gitEnvVars()
 
-    stage('Build')
+    stage('Build Docker Image')
    {
-        echo "Build the code artefacts..."
-       
+      echo "Build the docker image..."
+      def customImage = docker.build("${config.app.name}")
+      customImage.push('latest');
    }
     stage('Test') {
         echo "Running tests..."
